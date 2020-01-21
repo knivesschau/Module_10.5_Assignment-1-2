@@ -2,6 +2,7 @@
 
 function puppyListener() {
     console.log("puppylistener load!");
+    $(".puppy-results").hide();
     $(".puppy-form").on("submit", function(event) {
         event.preventDefault(); 
         let dogNum = $("#puppy-input").val(); 
@@ -9,26 +10,12 @@ function puppyListener() {
     });
 }
 
-function getPuppyNum(dogNum) {
-    console.log("getPuppyNum load!");
-    let userNum = dogNum; 
-    getPupPics(userNum);
-}
-
 function getPupPics(userNum){
     console.log("getPupPics load!");
     fetch(`https://dog.ceo/api/breeds/image/random/${userNum}`)
     .then(response => response.json())
     .then(responseJson => console.log(responseJson))
-    .catch(error => alert("Sorry, I can't show you any puppies right now :("))
-}
-
-function puppyReveal(pupImages) {
-    console.log("puppyReveal load!");
-    for (let i = 0; i < pupImages.message.length; i++) {
-        $('.puppy-images').replaceWith(`<img src="${responseJson.message}" class="dog-imgs`);
-        $('.puppies').removeClass('hidden');
-    }
+    .catch(error => alert("Sorry, I can't show you any puppies right now :("));
 }
 
 function runGenerator() {
