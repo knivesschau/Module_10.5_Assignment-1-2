@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dog Picture Generator</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Let's Look at Doggies!</h1>
+    </header>
+<main class="picture-generator">
+    <p>Pick a number between 1 and 50! Once you hit "submit", I'll give you pictures of that many doggies! Isn't that neat?</p>
+    <form class="puppy-form">
+        <input id="puppy-input" type="number" min="1" max="50" aria-label="Number of Dogs"></input>
+        <input type="submit" name="submit" value="Show Me the Doggies!" aria-label="Submit Button"></input>
+    </form>
+    <section class="puppies hidden">
+        <h2> Wow!! Doggies! </h2>
+        <img class="puppy-images" alt="placeholder">
+    </section>
+</main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
