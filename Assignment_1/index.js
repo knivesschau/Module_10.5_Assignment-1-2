@@ -11,7 +11,7 @@ function puppyListener() {
 
 function getPupPics(dogNum){
     console.log("getPupPics ran!");
-    fetch(`https://dog.ceo/api/breeds/image/random/` + dogNum)
+    fetch(`https://dog.ceo/api/breeds/image/random/${dogNum}`)
     .then (response => response.json())
     .then (responseJson => revealPuppies(responseJson))
     .catch (error => alert(`Sorry, I can't show you any doggies right now :(`));
@@ -20,15 +20,16 @@ function getPupPics(dogNum){
 function revealPuppies(responseJson) {
     console.log(responseJson);
     console.log("reveal puppies ran!");
-    for (let i = 0; i < responseJson.messages.length; i++) {
+    for (let i = 0; i < responseJson.message.length; i++) {
         $(".puppy-imgs").replaceWith(`<img src="${responseJson.message[i]}" class="result-pics" alt="dog images">`);
-        $(".puppy").removeClass(".hidden");
+        $(".puppy").removeClass("hidden");
     };
 } 
 
 function runGenerator() {
     console.log("Pic generator loaded! Type in a number!");
     puppyListener();
+
 }
 
 $(runGenerator);
