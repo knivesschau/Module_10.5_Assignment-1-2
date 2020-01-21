@@ -1,7 +1,6 @@
 'use strict';
 
 function puppyListener() {
-    console.log("puppylistener load!");
     $(".puppy-form").on("submit", function(event) {
         event.preventDefault(); 
         let dogNum = $("#puppy-input").val();
@@ -9,8 +8,7 @@ function puppyListener() {
     });
 }
 
-function getPupPics(dogNum){
-    console.log("getPupPics ran!");
+function getPupPics(dogNum) {
     fetch(`https://dog.ceo/api/breeds/image/random/${dogNum}`)
     .then (response => response.json())
     .then (responseJson => revealPuppies(responseJson))
@@ -19,7 +17,6 @@ function getPupPics(dogNum){
 
 function revealPuppies(responseJson) {
     console.log(responseJson);
-    console.log("reveal puppies ran!");
     $(".puppy").empty();
     for (let i = 0; i < responseJson.message.length; i++) {
         $(".puppy").append(`<img src="${responseJson.message[i]}" class="result-pics" alt="puppy images">`);
@@ -30,7 +27,6 @@ function revealPuppies(responseJson) {
 function runGenerator() {
     console.log("Pic generator loaded! Type in a number!");
     puppyListener();
-
 }
 
 $(runGenerator);
