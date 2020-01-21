@@ -20,8 +20,9 @@ function getPupPics(dogNum){
 function revealPuppies(responseJson) {
     console.log(responseJson);
     console.log("reveal puppies ran!");
+    $(".puppy").empty();
     for (let i = 0; i < responseJson.message.length; i++) {
-        $(".puppy-imgs").replaceWith(`<img src="${responseJson.message[i]}" class="result-pics" alt="dog images">`);
+        $(".puppy").append(`<img src="${responseJson.message[i]}" class="result-pics" alt="puppy images">`);
         $(".puppy").removeClass("hidden");
     };
 } 

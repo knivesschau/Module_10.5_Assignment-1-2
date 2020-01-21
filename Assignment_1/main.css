@@ -1,3 +1,32 @@
+body {
+    text-align: center;
+    border: 2px solid black;
+}
+
 .hidden {
     display:none;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 28px;
+}
+
+input[type="number"] {
+    width: 60px;
+    height: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    width: 150px;
+    font-size: 20px;
 }
